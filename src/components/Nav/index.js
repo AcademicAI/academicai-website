@@ -7,6 +7,8 @@ const Header = styled.header`
 	width: 100%;
 	background-color: ${color.lightest};
 	border-bottom: ${spacing.borderWidth.default}rem solid ${color.primary};
+	z-index: 1;
+	top: 0%;
 `
 
 export const Nav = () => {

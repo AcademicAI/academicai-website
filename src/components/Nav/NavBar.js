@@ -41,13 +41,16 @@ export const NavBar = () => {
 				<NavItem href='/about' active={pathname === '/about'}>
 					{locale == 'pt-BR' ? 'Sobre' : 'About'}
 				</NavItem>
-				<NavItem href='/' active={pathname === '/projects'}>
+				<NavItem href='/projects' active={pathname === '/projects'}>
 					{locale == 'pt-BR' ? 'Projetos' : 'Projects'}
 				</NavItem>
-				<NavItem href='/' active={pathname === '/publications'}>
+				<NavItem
+					href='/publications'
+					active={pathname === '/publications'}
+				>
 					{locale == 'pt-BR' ? 'Publicações' : 'Publications'}
 				</NavItem>
-				<NavItem href='/' active={pathname === '/contact'}>
+				<NavItem href='/contact' active={pathname === '/contact'}>
 					{locale == 'pt-BR' ? 'Contato' : 'Contact Us'}
 				</NavItem>
 			</NavMenu>
