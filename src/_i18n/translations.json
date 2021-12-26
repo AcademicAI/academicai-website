@@ -69,6 +69,15 @@
                         "discord": "https://discordapp.com/users/176048754774769664/",
                         "mail": "navi1921@gmail.com",
                         "lattes": "http://lattes.cnpq.br/5229824680871242"
+                    },
+                    {
+                        "picture": "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K8105247J7",
+                        "name": "Jessica Cardoso",
+                        "description": "Graduated in Computer Science, I have interest in NLP, Artificial Intelligence and Web Development.",
+                        "github": "https://github.com/jessicacardoso",
+                        "discord": "https://discordapp.com/users/601214907400060937/",
+                        "mail": "jcardoso@inf.puc-rio.br",
+                        "lattes": "http://lattes.cnpq.br/6017380061431749"
                     }
                 ]
             }
@@ -85,13 +94,22 @@
                 "title": "Quem somos nós?",
                 "members": [
                     {
-                        "picture": "https://media-exp1.licdn.com/dms/image/C4E03AQGYmav3AhfuOQ/profile-displayphoto-shrink_200_200/0/1633229857189?e=1646265600&v=beta&t=eCSD1EtsW2aEsfvPJg2eyGNb-t15vjGNfYzHGxXMsR4",
+                        "picture": "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K8476434Y1",
                         "name": "Ivan Pereira",
                         "description": "Mestre em informática, possuo interesse em inteligência artificial, mais especificamente na área de aprendizado por reforço, sistemas multiagente e gameAI.",
                         "github": "https://github.com/abcp4",
                         "discord": "https://discordapp.com/users/176048754774769664/",
                         "mail": "navi1921@gmail.com",
                         "lattes": "http://lattes.cnpq.br/5229824680871242"
+                    },
+                    {
+                        "picture": "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K8105247J7",
+                        "name": "Jessica Cardoso",
+                        "description": "Graduada em ciência da computação, possui interesse em NLP, inteligência artficial e desenvolvimento web.",
+                        "github": "https://github.com/jessicacardoso",
+                        "discord": "https://discordapp.com/users/601214907400060937/",
+                        "mail": "jcardoso@inf.puc-rio.br",
+                        "lattes": "http://lattes.cnpq.br/6017380061431749"
                     }
                 ]
             }
@@ -101,13 +119,19 @@
         "en-US": [
             {
                 "picture": "/assets/images/undraw_Chat_bot_re_e2gj.svg",
-                "title": "SucupiraBot (SuBot)",
-                "description": "Conversational agent for public consultation of academic data made available on the CAPES open data portal.",
-                "url": "projects/sucupirabot"
+                "title": "Academic Search Engine",
+                "description": "Search engine for public consultation of academic data made available on the CAPES open data portal.",
+                "url": ""
+            },
+            {
+                "picture": "/assets/images/undraw_typewriter_re_u9i2.svg",
+                "title": "Academic Abstract Editor",
+                "description": "Tool for helping the writing of abstracts. Suggest titles, auto completes and recomends keywords, among others.",
+                "url": ""
             },
             {
                 "picture": "/assets/images/topics.png",
-                "title": "Modelos de Tópicos de Teses",
+                "title": "Thesis topic model",
                 "description": "Tool that allows and exploration of topics built from the corpus of theses and dissertations.",
                 "url": "projects/topics"
             }
@@ -115,9 +139,15 @@
         "pt-BR": [
             {
                 "picture": "/assets/images/undraw_Chat_bot_re_e2gj.svg",
-                "title": "SucupiraBot (SuBot)",
-                "description": "Agente conversacional para consulta pública dos dados acadêmicos disponibilizados no portal de dados abertos da CAPES.",
-                "url": "projects/sucupirabot"
+                "title": "Buscador Acadêmico",
+                "description": "Engine de busca para consulta pública dos dados acadêmicos disponibilizados no portal de dados abertos da CAPES.",
+                "url": ""
+            },
+            {
+                "picture": "/assets/images/undraw_typewriter_re_u9i2.svg",
+                "title": "Editor de resumos",
+                "description": "Ferramenta para ajudar a escrever resumos. Sugere título, autocomplete, recomendação de palavra chaves entre outros.",
+                "url": ""
             },
             {
                 "picture": "/assets/images/topics.png",

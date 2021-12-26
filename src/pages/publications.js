@@ -78,7 +78,7 @@ export default function Publications() {
 							<Button size='small'>PDF</Button>
 							<Button size='small'>Slides</Button>
 							<Button size='small'>Cite</Button>
-							<Button size='small'>Código fonte</Button>
+							{/* <Button size='small'>Código fonte</Button> */}
 						</PubButtons>
 					</article>
 				</Papers>
