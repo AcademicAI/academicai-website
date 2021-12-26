@@ -103,13 +103,13 @@
                 "picture": "/assets/images/undraw_Chat_bot_re_e2gj.svg",
                 "title": "SucupiraBot (SuBot)",
                 "description": "Conversational agent for public consultation of academic data made available on the CAPES open data portal.",
-                "url": ""
+                "url": "projects/sucupirabot"
             },
             {
                 "picture": "/assets/images/topics.png",
                 "title": "Modelos de Tópicos de Teses",
                 "description": "Tool that allows and exploration of topics built from the corpus of theses and dissertations.",
-                "url": ""
+                "url": "projects/topics"
             }
         ],
         "pt-BR": [
@@ -117,13 +117,13 @@
                 "picture": "/assets/images/undraw_Chat_bot_re_e2gj.svg",
                 "title": "SucupiraBot (SuBot)",
                 "description": "Agente conversacional para consulta pública dos dados acadêmicos disponibilizados no portal de dados abertos da CAPES.",
-                "url": ""
+                "url": "projects/sucupirabot"
             },
             {
                 "picture": "/assets/images/topics.png",
                 "title": "Modelos de Tópicos de Teses",
                 "description": "Ferramenta que permite e exploração de tópicos construídos a partir do corpus de teses e dissertações.",
-                "url": ""
+                "url": "projects/topics"
             }
         ]
     },

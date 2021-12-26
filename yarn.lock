@@ -992,6 +992,11 @@ cssnano-simple@3.0.0:
   dependencies:
     cssnano-preset-simple "^3.0.0"
 
+d3@^3.5.17:
+  version "3.5.17"
+  resolved "https://registry.yarnpkg.com/d3/-/d3-3.5.17.tgz#bc46748004378b21a360c9fc7cf5231790762fb8"
+  integrity sha1-vEZ0gAQ3iyGjYMn8fPUjF5B2L7g=
+
 damerau-levenshtein@^1.0.6:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.7.tgz#64368003512a1a6992593741a09a9d31a836f55d"
@@ -2753,6 +2758,13 @@ react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-ldavis@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-ldavis/-/react-ldavis-1.0.0.tgz#e76269a777acae0344026be38bd9e35aa0b58a17"
+  integrity sha512-GEk72G2Bx9k9oAdeCVFJwIQfku2RXeuJ/GTgvifao+2+9x5yzLeq1sy8xpCiB+001RBToEGCn3bzXOcPklH9BA==
+  dependencies:
+    d3 "^3.5.17"
 
 react-refresh@0.8.3:
   version "0.8.3"
