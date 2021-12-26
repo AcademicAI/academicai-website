@@ -1,0 +1,64 @@
+{
+    "home": {
+        "en-US": {
+            "objectives": [
+                {
+                    "icon": "faCommentDots",
+                    "title": "Provide knowledge",
+                    "description": "Provide academic knowledge in an accessible way through natural language."
+                },
+                {
+                    "icon": "faSearch",
+                    "title": "Perform queries",
+                    "description": "Allow consultation of the most diverse types of academic data."
+                },
+                {
+                    "icon": "faBook",
+                    "title": "Organize knowledge",
+                    "description": "Development of academic data ontology and knowledge bases."
+                },
+                {
+                    "icon": "faFlask",
+                    "title": "Search",
+                    "description": "Develop AI models and algorithms with data"
+                }
+            ]
+    },
+        "pt-BR": {
+            "objectives": [
+                {
+                    "icon": "faCommentDots",
+                    "title": "Fornecer conhecimento",
+                    "description": "Disponibilizar conhecimento acadêmico de forma acessível através de linguagem natural."
+                },
+                {
+                    "icon": "faSearch",
+                    "title": "Realizar consultas",
+                    "description": "Permitir consulta aos mais diversos tipos de dados acadêmicos."
+                },
+                {
+                    "icon": "faBook",
+                    "title": "Organizar conhecimento",
+                    "description": "Desenvolvimento de ontologia e bases de conhecimento de dados acadêmicos."
+                },
+                {
+                    "icon": "faFlask",
+                    "title": "Pesquisa",
+                    "description": "Desenvolver modelos e algoritmos de IA com dados"
+                }
+            ]
+        }
+    },
+    "about": {
+        "en-US": {},
+        "pt-BR": {}
+    },
+    "projects": {
+        "en-US": {},
+        "pt-BR": {}
+    },
+    "publications": {
+        "en-US": {},
+        "pt-BR": {}
+    }
+}
