@@ -13,6 +13,7 @@ import { Banner } from '../components/Banner'
 import { useRouter } from 'next/router'
 import { color, spacing } from '../theme'
 import { Anchor } from '../components/Anchor'
+import { getPostBySlug } from '../lib/api'
 
 const AboutSection = styled(Container)`
 	text-align: justify;
@@ -71,13 +72,14 @@ const Icon = styled.li`
 	text-align: center;
 `
 
-export default function About() {
+export default function About({ content }) {
 	const router = useRouter()
 	const { locale } = router
 
 	const title =
 		locale == 'pt-BR' ? 'AcademicAI - Sobre' : 'AcademicAI - About'
 
+	const pageContent = content[locale]
 	return (
 		<>
 			<SeoHead title={title} />
@@ -86,111 +88,83 @@ export default function About() {
 				<h1>{locale == 'pt-BR' ? 'Sobre' : 'About'}</h1>
 			</Banner>
 			<AboutSection style={{ maxWidth: '80rem' }} as='section'>
-				<h2 style={{ textAlign: 'center' }}>O que é o AcademicAI?</h2>
-				<SectionParagraph>
-					É um projeto que visa fornecer todo tipo de dado, modelo e
-					ferramentas que sejam voltadas ao domínio acadêmico.
-				</SectionParagraph>
-				<SectionParagraph>
-					Aceitamos a colaboração e contribuição de interessados.
-				</SectionParagraph>
-				<h2 style={{ marginBottom: 20 }}>Quem somos?</h2>
+				<h2 style={{ textAlign: 'center' }}>
+					{pageContent['main'].title}
+				</h2>
+				{pageContent['main'].description.map((element, index) => (
+					<SectionParagraph key={index}>{element}</SectionParagraph>
+				))}
+				<h2 style={{ marginBottom: 20 }}>
+					{pageContent['about-us'].title}
+				</h2>
 				<Cards>
-					<Card>
-						<CardImg
-							src='http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K8476434Y1'
-							alt='Foto de Ivan'
-						/>
-						<CardTitle>Ivan Pereira</CardTitle>
-						<CardDescription>
-							Mestrando em informática, possuo interesse em
-							inteligência artificial, mais especificamente na
-							área de aprendizado por reforço, sistemas
-							multiagente e gameAI.
-						</CardDescription>
-						<Icons>
-							<Icon>
-								<Anchor
-									href='https://github.com/abcp4'
-									target='_blank'
-									rel='noreferrer'
-								>
-									<FontAwesomeIcon icon={faGithub} /> Github
-								</Anchor>
-							</Icon>
-							<Icon>
-								<Anchor
-									href='https://discordapp.com/users/176048754774769664/'
-									target='_blank'
-									rel='noreferrer'
-								>
-									<FontAwesomeIcon icon={faDiscord} />{' '}
-									Discord
-								</Anchor>
-							</Icon>
-							<Icon>
-								<Anchor href='mailto:navi1921@gmail.com'>
-									<FontAwesomeIcon icon={faEnvelope} /> Email
-								</Anchor>
-							</Icon>
-							<Icon>
-								<Anchor href='http://lattes.cnpq.br/5229824680871242'>
-									<img
-										src='/icons/lattes.jpg'
-										alt='Logo Lattes'
-										style={{
-											height: 15,
-											width: 15,
-											margin: 'auto',
-											marginBottom: 5,
-											marginTop: 5,
-										}}
-									/>{' '}
-									Lattes
-								</Anchor>
-							</Icon>
-						</Icons>
-					</Card>
-					<Card>
-						<CardImg
-							src='http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K8105247J7'
-							alt='Foto de Jessica'
-						/>
-						<CardTitle>Jessica Cardoso</CardTitle>
-						<CardDescription>
-							Graduada em ciência da computação, possui interesse
-							em NLP, inteligência artficial e desenvolvimento
-							web.
-						</CardDescription>
-						<Icons>
-							<Icon>
-								<Anchor
-									href='https://github.com/jessicacardoso'
-									target='_blank'
-									rel='noreferrer'
-								>
-									<FontAwesomeIcon icon={faGithub} /> Github
-								</Anchor>
-							</Icon>
-							<Icon>
-								<Anchor
-									href='https://t.me/jessicacardoso'
-									target='_blank'
-									rel='noreferrer'
-								>
-									<FontAwesomeIcon icon={faTelegram} />{' '}
-									Telegram
-								</Anchor>
-							</Icon>
-							<Icon>
-								<Anchor href='mailto:jcardoso@inf.puc-rio.br'>
-									<FontAwesomeIcon icon={faEnvelope} /> Email
-								</Anchor>
-							</Icon>
-						</Icons>
-					</Card>
+					{pageContent['about-us'].members.map((element, index) => (
+						<Card key={`member_${index}`}>
+							<CardImg
+								src={element.picture}
+								alt='Foto de Ivan'
+							/>
+							<CardTitle>{element.name}</CardTitle>
+							<CardDescription>
+								{element.description}
+							</CardDescription>
+							<Icons>
+								<Icon>
+									<Anchor
+										href={element.github}
+										target='_blank'
+										rel='noreferrer'
+									>
+										<FontAwesomeIcon icon={faGithub} />{' '}
+										Github
+									</Anchor>
+								</Icon>
+								<Icon>
+									<Anchor
+										href={element.discord}
+										target='_blank'
+										rel='noreferrer'
+									>
+										<FontAwesomeIcon icon={faDiscord} />{' '}
+										Discord
+									</Anchor>
+								</Icon>
+								<Icon>
+									<Anchor href={element.mail}>
+										<FontAwesomeIcon icon={faEnvelope} />{' '}
+										Email
+									</Anchor>
+								</Icon>
+								<Icon>
+									<Anchor href={element.lattes}>
+										<img
+											src='/icons/lattes.jpg'
+											alt='Logo Lattes'
+											style={{
+												height: 15,
+												width: 15,
+												margin: 'auto',
+												marginBottom: 5,
+												marginTop: 5,
+											}}
+										/>{' '}
+										Lattes
+									</Anchor>
+								</Icon>
+							</Icons>
+						</Card>
+					))}
 				</Cards>
 			</AboutSection>
 		</>
 	)
+}
+
+export async function getStaticProps() {
+	const content = getPostBySlug('about')
+	return {
+		props: {
+			content: content,
+		},
+	}
 }

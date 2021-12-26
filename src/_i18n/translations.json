@@ -50,15 +50,89 @@
         }
     },
     "about": {
-        "en-US": {},
-        "pt-BR": {}
+        "en-US":  {
+            "main": {
+                "title": "What is AcademicAI?",
+                "description": [
+                    "It is a project that aims to provide all types of data, models and tools that are aimed at the academic domain.",
+                    "We welcome collaboration and input from interested parties."
+                ]
+            },
+            "about-us":{
+                "title": "Who we are?",
+                "members": [
+                    {
+                        "picture": "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K8476434Y1",
+                        "name": "Ivan Pereira",
+                        "description": "Master in computer science, I am interested in artificial intelligence, more specifically in the field of learning through reinforcement, multi-agent systems and gameAI.",
+                        "github": "https://github.com/abcp4",
+                        "discord": "https://discordapp.com/users/176048754774769664/",
+                        "mail": "navi1921@gmail.com",
+                        "lattes": "http://lattes.cnpq.br/5229824680871242"
+                    }
+                ]
+            }
+        },
+        "pt-BR": {
+            "main": {
+                "title": "O que é o AcademicAI?",
+                "description": [
+                    "É um projeto que visa fornecer todo tipo de dado, modelo e ferramentas que sejam voltadas ao domínio acadêmico.",
+                    "Aceitamos a colaboração e contribuição de interessados."
+                ]
+            },
+            "about-us":{
+                "title": "Quem somos nós?",
+                "members": [
+                    {
+                        "picture": "https://media-exp1.licdn.com/dms/image/C4E03AQGYmav3AhfuOQ/profile-displayphoto-shrink_200_200/0/1633229857189?e=1646265600&v=beta&t=eCSD1EtsW2aEsfvPJg2eyGNb-t15vjGNfYzHGxXMsR4",
+                        "name": "Ivan Pereira",
+                        "description": "Mestre em informática, possuo interesse em inteligência artificial, mais especificamente na área de aprendizado por reforço, sistemas multiagente e gameAI.",
+                        "github": "https://github.com/abcp4",
+                        "discord": "https://discordapp.com/users/176048754774769664/",
+                        "mail": "navi1921@gmail.com",
+                        "lattes": "http://lattes.cnpq.br/5229824680871242"
+                    }
+                ]
+            }
+        }
     },
     "projects": {
-        "en-US": {},
-        "pt-BR": {}
+        "en-US": [
+            {
+                "picture": "/assets/images/undraw_Chat_bot_re_e2gj.svg",
+                "title": "SucupiraBot (SuBot)",
+                "description": "Conversational agent for public consultation of academic data made available on the CAPES open data portal.",
+                "url": ""
+            },
+            {
+                "picture": "/assets/images/topics.png",
+                "title": "Modelos de Tópicos de Teses",
+                "description": "Tool that allows and exploration of topics built from the corpus of theses and dissertations.",
+                "url": ""
+            }
+        ],
+        "pt-BR": [
+            {
+                "picture": "/assets/images/undraw_Chat_bot_re_e2gj.svg",
+                "title": "SucupiraBot (SuBot)",
+                "description": "Agente conversacional para consulta pública dos dados acadêmicos disponibilizados no portal de dados abertos da CAPES.",
+                "url": ""
+            },
+            {
+                "picture": "/assets/images/topics.png",
+                "title": "Modelos de Tópicos de Teses",
+                "description": "Ferramenta que permite e exploração de tópicos construídos a partir do corpus de teses e dissertações.",
+                "url": ""
+            }
+        ]
     },
     "publications": {
         "en-US": {},
         "pt-BR": {}
+    },
+    "contact-us": {
+        "en-US": "You can contact us to report a problem on the site, contribute or make suggestions through the following networks. Try contacting us via Discord or send us an email.",
+        "pt-BR": "Você pode entrar em contato conosco para relatar algum problema no site, contribuir ou fazer sugestões através das seguintes redes. Tente nos contatar pelo Discord ou nos envie um e-mail."
     }
 }

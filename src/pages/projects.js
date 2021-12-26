@@ -9,6 +9,7 @@ import styled from 'styled-components'
 import Link from 'next/link'
 import { maxBreakpoint } from '../utils/media'
 import { color, breakpoints } from '../theme'
+import { getPostBySlug } from '../lib/api'
 
 const ProjectItem = styled(Column)`
 	padding: 1rem;
@@ -41,12 +42,14 @@ export const SectionParagraph = styled.p`
 	padding: 1rem 0;
 `
 
-export default function Projects() {
+export default function Projects({ content }) {
 	const router = useRouter()
 	const { locale } = router
 
 	const title =
 		locale == 'pt-BR' ? 'AcademicAI - Projetos' : 'AcademicAI - Projects'
+
+	const pageContent = content[locale]
 
 	return (
 		<>
@@ -56,57 +59,38 @@ export default function Projects() {
 				<h1>{locale == 'pt-BR' ? 'Projetos' : 'Projects'}</h1>
 			</Banner>
 			<Container as='section'>
-				<Row as='article'>
-					<ProjectItem minScreenSize='md'>
-						<SectionTitle>SucupiraBot (SuBot)</SectionTitle>
-						<div>
-							<SectionParagraph>
-								Agente conversacional para consulta pública dos
-								dados acadêmicos disponibilizados no portal de
-								dados abertos da CAPES.
-							</SectionParagraph>
-							<Link href='/projects/sucupirabot' passHref>
-								<Button appearance='primary' as='a'>
-									Detalhes
-								</Button>
-							</Link>
-						</div>
-					</ProjectItem>
-					<ProjectItem minScreenSize='md'>
-						<img
-							src='/assets/images/undraw_Chat_bot_re_e2gj.svg'
-							alt=''
-						/>
-					</ProjectItem>
-				</Row>
-				<Row as='article' reverse>
-					<ProjectItem minScreenSize='sm'>
-						<div>
-							<SectionTitle>
-								Modelos de Tópicos de Teses
-							</SectionTitle>
+				{pageContent.map((content, index) => (
+					<Row as='article' key={index} reverse={index % 2}>
+						<ProjectItem minScreenSize='md'>
+							<SectionTitle>{content.title}</SectionTitle>
 							<div>
 								<SectionParagraph>
-									Ferramenta que permite e exploração de
-									tópicos construídos a partir do corpus de
-									teses e dissertações.
+									{content.description}
 								</SectionParagraph>
-								<Link
-									href='/projects/graphics#tesesTopics'
-									passHref
-								>
+								<Link href={content.url} passHref>
 									<Button appearance='primary' as='a'>
-										Detalhes
+										{locale == 'pt-BR'
+											? 'Detalhes'
+											: 'Explore'}
 									</Button>
 								</Link>
 							</div>
-						</div>
-					</ProjectItem>
-					<ProjectItem minScreenSize='sm'>
-						<img src='/assets/images/topics.png' alt='' />
-					</ProjectItem>
-				</Row>
+						</ProjectItem>
+						<ProjectItem minScreenSize='md'>
+							<img src={content.picture} alt='image' />
+						</ProjectItem>
+					</Row>
+				))}
 			</Container>
 		</>
 	)
+}
+
+export async function getStaticProps() {
+	const content = getPostBySlug('projects')
+	return {
+		props: {
+			content: content,
+		},
+	}
 }

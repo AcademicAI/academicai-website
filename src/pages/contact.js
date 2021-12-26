@@ -13,6 +13,8 @@ import {
 	faTelegram,
 } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { getPostBySlug } from '../lib/api'
+
 const Social = styled(Row)`
 	padding: 1rem;
 `
@@ -55,7 +57,7 @@ const ContactDescription = styled.p`
 	margin-bottom: 1rem;
 `
 
-export default function Contact() {
+export default function Contact({ content }) {
 	const router = useRouter()
 	const { locale } = router
 
@@ -63,6 +65,8 @@ export default function Contact() {
 		locale == 'pt-BR'
 			? 'AcademicAI - Contate-nos'
 			: 'AcademicAI - Contact Us'
+
+	const pageContent = content[locale]
 
 	return (
 		<>
@@ -72,12 +76,7 @@ export default function Contact() {
 				<h1>{locale == 'pt-BR' ? 'Contate-nos' : 'Contact Us'}</h1>
 			</Banner>
 			<Container maxWidth='md' as='main'>
-				<ContactDescription>
-					Você pode entrar em contato conosco para relatar algum
-					problema no site, contribuir ou fazer sugestões através das
-					seguintes redes. Tente nos contatar pelo Discord ou nos
-					envie um e-mail.
-				</ContactDescription>
+				<ContactDescription>{pageContent}</ContactDescription>
 				<Social>
 					<Column>
 						<SocialButton
@@ -128,4 +127,13 @@ export default function Contact() {
 			</Container>
 		</>
 	)
+}
+
+export async function getStaticProps() {
+	const content = getPostBySlug('contact-us')
+	return {
+		props: {
+			content: content,
+		},
+	}
 }
