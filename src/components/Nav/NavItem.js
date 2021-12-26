@@ -1,11 +1,13 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-
+import { phone } from '../../utils/media'
 import { color, typography } from '../../theme'
 import { Anchor } from '../Anchor'
 
 const Wrapper = styled.li`
+	list-style: none;
 	margin-left: 5rem;
+	${phone('margin: 1rem 0;')}
 `
 
 const NavLink = styled(Anchor)`
